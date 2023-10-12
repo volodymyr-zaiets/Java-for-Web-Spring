@@ -15,12 +15,12 @@ http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="myTumbler"
           class="com.example.Tumbler">
-        <property name="liquid" ref="myWater"/>
+        <constructor-arg ref="myWater"/>
     </bean>
 
     <bean id="myPerson"
           class="com.example.Person">
-        <property name="glass" ref="myTumbler"/>
+        <constructor-arg ref="myTumbler"/>
         <property name="scream" value="${person.scream}"/>
     </bean>
 </beans>

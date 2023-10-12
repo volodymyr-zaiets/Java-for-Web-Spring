@@ -1,14 +1,12 @@
 package com.example;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Test1 {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-                "applicationContext.xml"
-        );
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
 
-        Person myPerson = context.getBean("myPerson", Person.class);
+        Person myPerson = context.getBean("person", Person.class);
         System.out.println("---------- Time Skip ----------");
         myPerson.checkGlass();
         myPerson.setGlass(new Tumbler(new Vine()));
