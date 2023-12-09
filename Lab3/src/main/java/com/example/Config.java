@@ -1,12 +1,11 @@
 package com.example;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.*;
 
 @Configuration
 @PropertySource("classpath:application.properties")
+@ComponentScan("com.example")
+@EnableAspectJAutoProxy
 public class Config {
 
     @Bean
